@@ -1,0 +1,27 @@
+body, html{
+	height:100%;
+	font-family: "Georgia", "Times New Roman", serif;
+}
+.panel .panel-heading {
+	text-align:left;
+	background-color: black;
+}
+
+.panel, .panel-heading {
+	border-color: black;
+}
+
+hr {
+	color: black;
+	border: 1px solid black;
+}
+.jumbotron {
+	background-color: white;
+	position: relative;
+}
+
+#NYTimage {
+	position: absolute;
+	bottom: -1.5em;
+	right: 0;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New York Times Search Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+
+<div class = "container">
+    
+    <hr>
+
+    <div class="jumbotron text-center">
+        <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+New York Times Article Search</h1>
+        <div id="NYTimage">
+            <a href="http://developer.nytimes.com/" target="_blank"><img src="assets/images/poweredby_nytimes_150c.png" alt="Powered By The New York Times"></a>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <!--Search Panel-->
+    <div class="panel panel-primary" id="searchDisplay">
+        <div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Search Parameters</div>
+        <div class="panel-body">
+            <form id="search-form">
+                <div class="form-group">
+                    <label for="search-text">Search Term:</label>
+                    <input type="text" class="form-control" placeholder="Anything" id = "search-text">
+                </div>
+          
+                <div class="form-group">
+                    <label for="num-records">Number of Records to Retrieve</label>
+                    <select class="form-control" id="num-records">
+                        <option>1</option>
+                        <option>5</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start-year">Start Year (Optional):</label>
+                    <input type="number" min="1851" max="2016" class="form-control" id = "start-year" placeholder="1851">
+                </div>
+                <div class="form-group">
+                    <label for="end-year">End Year (Optional):</label>
+                    <input type="number" min="1851" max="2016" class="form-control" id = "end-year" placeholder="2016">
+                </div>
+            
+                <div id="search-btn" type="submit" value="Search" class = "btn btn-default"><span class ="glyphicon glyphicon-search"></span>&nbsp;Search</div>
+                
+                <button id="clear-btn" type="reset" value="Clear" class = "btn btn-default"><span class = "glyphicon glyphicon-trash"></span>&nbsp;Clear</button>
+            
+            </form>
+        </div>
+    </div>
+    
+    <!--Display Panel-->
+    <div class="panel panel-primary" id="resultDisplay">
+        <div class="panel-heading"><span class ="glyphicon glyphicon-calendar"></span>&nbsp;Top Articles</div>
+        <div class="panel-body" id="results">
+            
+        </div>
+    </div>
+
+</div>
+
+<!-- custom JavaScript -->
+<script type="text/javascript" src="assets/js/logic.js"></script>
+   
+</body>
+</html>
