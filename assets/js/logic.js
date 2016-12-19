@@ -2,8 +2,10 @@
 
 $(document).ready(function() {
 
-	$("#search-btn").on("click", function() {
-		var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?fq='
+	$(document).on("click", "#search-btn", function(event) {
+		event.preventDefault();
+		$("#results").empty();
+		var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q='
 		+ $("#search-text").val().replace(" ", "+");
 		var restrictSource = '&fq=source:("The New York Times")';
 		var apiKey = '&api-key=4bbabbfc37dd4786914ca930e35dd905';
@@ -77,7 +79,8 @@ $(document).ready(function() {
 
 	});
 
-	$("#clear-btn").on("click", function(){
+	$(document).on("click", "#clear-btn", function(event){
+		event.preventDefault();
 		$("#results").empty();
 	});
 
