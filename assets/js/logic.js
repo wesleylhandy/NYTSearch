@@ -83,6 +83,7 @@ $(document).ready(function() {
 	$(document).on("click", "#clear-btn", function(event){
 		event.preventDefault();
 		$("#results").empty();
+		$(".empty").val('');
 	});
 
 });
