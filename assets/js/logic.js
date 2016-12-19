@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$(document).on("click", "#search-btn", function(event) {
 		event.preventDefault();
 		$("#results").empty();
+		$("#results").html("<p>Click on Images to View Article</p>");
 		var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q='
 		+ $("#search-text").val().replace(" ", "+");
 		var restrictSource = '&fq=source:("The New York Times")';
