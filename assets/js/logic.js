@@ -71,7 +71,7 @@ $(document).ready(function() {
 					.appendTo(wrapper);	
 				//grabs headline and makes it a link to article	
 				var headline = $("<a>").addClass("media-heading h4 headline")
-					.attr("href", "href", response.response.docs[i].web_url)
+					.attr("href", response.response.docs[i].web_url)
 					.attr("target", "_blank")
 					.text(response.response.docs[i].headline.main)
 					.appendTo(mediaBody);
