@@ -25,3 +25,13 @@ hr {
 	bottom: -1.5em;
 	right: 0;
 }
+
+.headline {
+	color: black;
+	text-decoration: none;
+	font-style: italic;
+}
+
+.headline:hover, .headline:visited {
+	color: black;
+}
