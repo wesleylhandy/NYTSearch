@@ -41,15 +41,20 @@ $(document).ready(function() {
 				var link = $("<a>").attr("href", response.response.docs[i].web_url)
 					.attr("target", "_blank");					
 				var thumb = $("<img>").addClass("media-object");
-				if (response.response.docs[i].multimedia[2]) {
-					thumb.attr("src", "https://www.nytimes.com/" + response.response.docs[i].multimedia[2].url)
+				for (let x = 0; x < response.response.docs[i].multimedia.length; x++) {
+					if (response.response.docs[i].multimedia[x].subtype === "thumbnail") {
+						thumb.attr("src", "https://www.nytimes.com/" 
+							+ response.response.docs[i].multimedia[x].url)
 						.attr("alt", "Image for " + response.response.docs[i].headline.main)
 						.appendTo(link);
-					} else {
-						thumb.attr("src", "https://placehold.it/75x75?text=No+Image")
-						.attr("alt", "No Image Available").
-						appendTo(link);
-					}
+	
+					} 
+				}
+				if (!thumb.attr("src")) {
+					thumb.attr("src", "https://placehold.it/75x75?text=No+Image")
+						.attr("alt", "No Image Available")
+						.appendTo(link);
+				}
 				link.appendTo(mediaLeft);
 
 				//creates the text body of the article
