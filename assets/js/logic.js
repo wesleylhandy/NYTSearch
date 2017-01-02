@@ -8,6 +8,7 @@ $(document).ready(function() {
 	var year = d.getFullYear();
 	$(".num").attr("max", year);
 	$("#end-year").attr("placeholder", year);
+	$("#year").text(year);
 
 	$(document).on("click", "#search-btn", function(event) {
 		event.preventDefault();
